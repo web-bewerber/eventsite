@@ -428,6 +428,21 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+  const form = document.querySelector('#feedback-form');
+  const nameInput = form.querySelector('input[name="name"]');
+  const emailInput = form.querySelector('input[name="email"]');
+  const messageInput = form.querySelector('textarea[name="message"]');
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const message = Name: ${nameInput.value}\nEmail: ${emailInput.value}\nMessage: ${messageInput.value};
+    fetch(https://api.telegram.org/bot<YOUR_BOT_TOKEN>/sendMessage?chat_id=<YOUR_CHAT_ID>&text=${encodeURIComponent(message)});
+    alert('Thank you for your feedback!');
+    form.reset();
+  });
+</script>
+
 
 </body>
 </html>
