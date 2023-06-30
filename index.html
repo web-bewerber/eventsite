@@ -36,9 +36,9 @@
 
     <!-- Header -->
     <header id="header">
-        <div class="logo">
-            <span class="icon fa-gem"></span>
-        </div>
+<!--        <div class="logo">-->
+<!--            <span class="icon fa-gem"></span>-->
+<!--        </div>-->
         <div class="content">
             <div class="inner">
                 <h1>ВЛАДИМИР ОСИПОВ</h1>
@@ -51,7 +51,7 @@
                 <li><a href="#work">КОРПОРАТ</a></li>
                 <li><a href="#about">ЮБИЛЕЙ</a></li>
                 <li><a href="#contact">КОНТАКТЫ</a></li>
-                <!--<li><a href="#elements">Elements</a></li>-->
+                <li><a href="#elements">Elements</a></li>
             </ul>
         </nav>
     </header>
@@ -134,8 +134,8 @@
                         <input type="text" name="name" id="name"/>
                     </div>
                     <div class="field half">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" id="email"/>
+                        <label for="phone">Phone</label>
+                        <input type="tel" name="phone" id="tel"/>
                     </div>
                     <div class="field">
                         <label for="message">Текст</label>
@@ -363,9 +363,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                             <input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe"/>
                         </div>
                         <div class="field half">
-                            <label for="demo-email">Email</label>
-                            <input type="email" name="demo-email" id="demo-email" value=""
-                                   placeholder="jane@untitled.tld"/>
+                            <label for="demo-phone">Phone</label>
+                            <input type="tel" name="phone" id="phone"
+                                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
                         </div>
                         <div class="field">
                             <label for="demo-category">Category</label>
@@ -428,21 +428,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
-<script>
-  const form = document.querySelector('#feedback-form');
-  const nameInput = form.querySelector('input[name="name"]');
-  const emailInput = form.querySelector('input[name="email"]');
-  const messageInput = form.querySelector('textarea[name="message"]');
-
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const message = Name: ${nameInput.value}\nEmail: ${emailInput.value}\nMessage: ${messageInput.value};
-    fetch(https://api.telegram.org/bot<YOUR_BOT_TOKEN>/sendMessage?chat_id=<YOUR_CHAT_ID>&text=${encodeURIComponent(message)});
-    alert('Thank you for your feedback!');
-    form.reset();
-  });
-</script>
-
 
 </body>
 </html>
